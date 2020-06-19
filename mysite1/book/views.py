@@ -4,6 +4,9 @@ from django.db.models import Q
 from .models import Book
 from .forms import BookForm
 from django.views.generic import ListView
+
+from rest_framework import viewsets
+from .api_json import BookApi
 # Create your views here.
 
 
@@ -30,6 +33,12 @@ class SearchResultsView(ListView):
         return object_list 
 
     
+
+##################### Book APIs #####################
+
+class book_list(viewsets.ModelViewSet):
+    queryset = Book.objects.all()
+    serializer_class = BookApi
 
 
 # ######################## books Views #######################
