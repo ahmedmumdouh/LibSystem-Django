@@ -1,0 +1,22 @@
+{% extends "book/base.html" %}
+
+
+
+{% block body %}
+  <h2>Name : <span style="color:blue">{{p.full_name}}</span></h2>
+  <h2>Email : <span style="color:blue">{{p.email}}</span></h2>
+  <!-- <h3>Content : {{p.content}}</h3>
+  <img src={{p.img}} >
+  <h3>Created date : {{p.created_date}}</h3> -->
+  <h2>List Books : </h2>
+  <ul>
+  {% for book in books %}
+    <li><h3>{{book.title}}</h3></li>
+  {% endfor %}
+  </ul>  
+
+  <a href="{% url 'mysite1:author_edit' pk=p.id %}" class="btn btn-primary btn-lg ">Edit Author </a>
+  <a href="{% url 'mysite1:author_delete' pk=p.id %}" class="btn btn-primary btn-lg ">Delete Author</a>
+
+
+  {% endblock body %}

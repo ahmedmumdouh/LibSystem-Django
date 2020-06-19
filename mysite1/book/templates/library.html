@@ -1,0 +1,25 @@
+{% extends "book/base.html" %}
+
+
+
+{% block body %}
+
+<!-- <h1><a href="{% url 'mysite1:all_authors'  %}">All_Authors</a></h1>
+<h1><a href="{% url 'bookApp:all_books'  %}">All_Books</a></h1> -->
+<h3><span style="color:gray">Search Books or Authors : </span></h3>
+
+<h4><form action="" method="get">
+    <input name="q" type="text" placeholder="Search...">
+</form></h4>
+
+
+<ul>
+  {% for obj in object_list %}
+    <li>
+      <a href="{% url 'bookApp:book_detail' pk=obj.id %}">{{ obj.title }}  </a> <b>Written By : </b>    <a href="{% url 'mysite1:author_detail' pk=obj.author.id %}">{{ obj.author }}</a>
+      
+    </li>
+  {% endfor %}
+</ul>
+
+{% endblock body %}

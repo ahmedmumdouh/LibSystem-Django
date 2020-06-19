@@ -1,0 +1,20 @@
+{% extends "book/base.html" %}
+
+
+
+{% block body %}
+
+<a href="{% url 'mysite1:author_create' %}" class="btn btn-primary btn-lg " >Add Author</a></br></br>
+<ul>
+{% for a in object_list %}
+    <li><a href="{% url 'mysite1:author_detail' pk=a.id %}">{{a.full_name}}</a></li>
+    <!-- <h3>{{p.user}}</h3>
+    <h3>{{p.content}}</h3>
+    <h3>{{p.img}}</h3>
+    <h3>{{p.created_date}}</h3> -->
+
+
+{% endfor %}
+</ul>
+gfdgd
+{% endblock body %}

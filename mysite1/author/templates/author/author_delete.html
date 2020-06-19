@@ -1,0 +1,25 @@
+{% extends "book/base.html" %}
+
+
+
+{% block body %}
+
+<form method="POST">
+    <h2>Name : <span style="color:blue">{{p.full_name}}</span></h2>
+  <h2>Email : <span style="color:blue">{{p.email}}</span></h2>
+  <!-- <h3>Content : {{p.content}}</h3>
+  <img src={{p.img}} >
+  <h3>Created date : {{p.created_date}}</h3> -->
+  <h2>List Books : </h2>
+  <ul>
+  {% for book in books %}
+    <li><h3>{{book.title}}</h3></li>
+  {% endfor %}
+  </ul>   
+    {% csrf_token %}
+    <h1>Are you Want to Del this Book ??</h1>
+    <h1><button type="submit" class="btn btn-primary">Confirm delete</button></h1>
+</form>
+
+
+{% endblock body %}

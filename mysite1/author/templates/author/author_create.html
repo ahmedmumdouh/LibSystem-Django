@@ -1,0 +1,14 @@
+{% extends "book/base.html" %}
+
+
+
+{% block body %}
+
+<form method="POST">
+    {{form}}
+    {% csrf_token %}
+    <button type="submit" class="btn btn-primary">AddAuthor</button>
+</form>
+
+
+{% endblock body %}

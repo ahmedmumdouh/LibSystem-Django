@@ -1,0 +1,19 @@
+{% extends "book/base.html" %}
+
+
+
+{% block body %}
+
+<a href="{% url 'bookApp:book_create' %}" class="btn btn-primary btn-lg " >Add book</a></br></br>
+<ul>
+{% for book in all_books %}
+    <li><a href="{% url 'bookApp:book_detail' pk=book.id %}">{{book.title}}</a></li>
+    <!-- <h3>{{p.user}}</h3>
+    <h3>{{p.content}}</h3>
+    <h3>{{p.img}}</h3>
+    <h3>{{p.created_date}}</h3> -->
+{% endfor %}
+</ul>
+
+
+{% endblock body %}

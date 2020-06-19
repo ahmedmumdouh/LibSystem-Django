@@ -1,0 +1,17 @@
+{% extends "book/base.html" %}
+
+
+
+{% block body %}
+<form method="POST">
+
+    <h2>Title : <span style="color:blue">{{book.title}}</span></h2>
+    <h2>Author : <span style="color:blue">{{book.author}}</span></h2>
+    <h2>Status : <span style="color:blue">{{book.status}}</span></h2>
+    {% csrf_token %}
+    <h1>Are you Want to Del this Book ??</h1>
+    <h1><button type="submit" class="btn btn-primary">Confirm delete</button></h1>
+</form>
+
+
+{% endblock body %}
